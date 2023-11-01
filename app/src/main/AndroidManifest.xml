@@ -26,6 +26,16 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".udemy_section_one.UdemySectionOneActivity"
+            android:screenOrientation="portrait"
+            android:label=""/>
+
+        <activity
+            android:name=".udemy_section_two.UdemySectionTwoActivity"
+            android:screenOrientation="portrait"
+            android:label=""/>
+
     </application>
 
 

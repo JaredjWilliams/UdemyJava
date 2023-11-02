@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.udemyjavacourse.R;
 import com.example.udemyjavacourse.enums.Section;
+import com.example.udemyjavacourse.udemy_section_five.UdemySectionFiveActivity;
 import com.example.udemyjavacourse.udemy_section_one.UdemySectionOneActivity;
 import com.example.udemyjavacourse.udemy_section_two.UdemySectionTwoActivity;
 
@@ -70,6 +71,7 @@ public class MainActivity extends ComponentActivity implements MainViewClickList
 
     @Override
     public void startSectionFiveActivity() {
-
+        startActivity(new Intent(this, UdemySectionFiveActivity.class));
     }
+
 }

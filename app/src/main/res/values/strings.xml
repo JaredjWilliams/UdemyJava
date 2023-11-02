@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">UdemyJavaCourse</string>
+    <string name="method_overloading"><u>Method Overloading:</u></string>
+    <string name="section_5_expressions_statements_amp_more"><![CDATA[Section 5: Expressions, Statements & More]]></string>
+    <string name="what_is_method_overloading">What is Method Overloading?</string>
+    <string name="method_overloading_definition">Method overloading happens when we have two functions named the same but they have different parameters passed in.</string>
+    <string name="why_is_this_important">Why is this important?</string>
+    <string name="method_overload_importance">This allows us to use the same name but have different variations of the block of code.</string>
+    <string name="uses">Uses</string>
+    <string name="method_overload_uses">To overload a method we change it\'s signature by changing the amount or type of parameters passed in. If the name and the parameters are the same for both functions, the method will not be overloaded.</string>
+    <string name="method_overload_examples">public void playCard(Card card) \npublic void playCard(Card card, int handSize)</string>
+    <string name="method_overloading_not_examples">public void playCard(Card card) \npublic int playCard(Card card) \n\n*This is not an example because changing the return type does not overload the method.</string>
+    <string name="not_examples">Not Examples</string>
+    <string name="challenges">Challenges</string>
+    <string name="method_overloading_challenge">Create two methods with the same name: convertToCentimeters. The first method has one parameter of type int, which represents the entire height in inches. You\'ll convert inches to centimeters, in this method, and pass back the number of centimeters, as a double. The second method has two parameters of type int, one to represent height in feet, and one to represent the remaining height in inches.</string>
+    <string name="test_it_yourself">Test it Yourself</string>
+    <string name="method_overloading_try_yourself_instructions">*Enter a number to see the result in centimeters.</string>
 </resources>

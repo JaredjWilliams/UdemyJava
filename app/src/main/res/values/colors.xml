@@ -8,4 +8,22 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background_gray">#f6f6f6</color>
+    <color name="text_color">#FF000000</color>
+
+
+    <color name="primary_background">#E5E5E5</color>
+    <color name="secondary_background">#F6F6F6</color>
+    <color name="tertiary_background">#F6F6F6</color>
+    <color name="quaternary_background">#F6F6F6</color>
+
+
+
+
+    <color name="primary_color">#ECE3CE</color>
+    <color name="secondary_color">#739072</color>
+    <color name="tertiary_color">#4F6F52</color>
+    <color name="quaternary_color">#3A4D39</color>
+
+
+
 </resources>

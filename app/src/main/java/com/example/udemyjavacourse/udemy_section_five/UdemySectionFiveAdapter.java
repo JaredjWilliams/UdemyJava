@@ -17,13 +17,15 @@ import java.util.List;
 
 public class UdemySectionFiveAdapter extends RecyclerView.Adapter<UdemySectionFiveViewHolder> {
 
+    private UdemySectionFivePresenter presenter;
     UdemySectionFiveClickListenerInterface clickListener;
     List<Chapter> chapters = Collections.emptyList();
     Context context;
-    public UdemySectionFiveAdapter(List<Chapter> chapters, Application application, UdemySectionFiveClickListenerInterface clickListener) {
+    public UdemySectionFiveAdapter(List<Chapter> chapters, Application application, UdemySectionFiveClickListenerInterface clickListener, UdemySectionFivePresenter presenter) {
         this.chapters = chapters;
         this.context = application;
         this.clickListener = clickListener;
+        this.presenter = presenter;
     }
     @NonNull
     @Override
@@ -39,6 +41,7 @@ public class UdemySectionFiveAdapter extends RecyclerView.Adapter<UdemySectionFi
 
         holder.chapter = chapter;
         holder.name.setText(chapter.title);
+        holder.bind(presenter);
         holder.setChallengeVisibility(chapter, holder.itemView);
         setOnClickListener(holder.itemView, holder, chapter);
     }

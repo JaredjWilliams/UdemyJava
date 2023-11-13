@@ -2,7 +2,9 @@ package com.example.udemyjavacourse;
 
 import static org.junit.Assert.assertEquals;
 
+import com.example.udemyjavacourse.udemy_section_five.UdemySectionFiveHolderInterface;
 import com.example.udemyjavacourse.udemy_section_five.UdemySectionFivePresenter;
+import com.example.udemyjavacourse.udemy_section_five.UdemySectionFiveViewHolder;
 import com.example.udemyjavacourse.udemy_section_five.UdemySectionFiveViewInterface;
 
 import org.junit.Before;
@@ -16,12 +18,16 @@ public class OverloadMethodChallengeTests {
     @Mock
     private UdemySectionFiveViewInterface view;
 
+    @Mock
+    private UdemySectionFiveHolderInterface holder;
+
     private UdemySectionFivePresenter presenter;
 
     @Before
     public void setUp() {
         MockitoAnnotations.openMocks(this);
         presenter = new UdemySectionFivePresenter(view);
+        presenter.setUdemySectionViewHolder(holder);
     }
 
     // METHOD: convertToCentimeters(int height)
@@ -45,7 +51,7 @@ public class OverloadMethodChallengeTests {
 
         presenter.overLoadMethodChallenge(parameters);
 
-        Mockito.verify(view).setMethodOverloadChallengeInput("175.26");
+        Mockito.verify(holder).setMethodOverloadChallengeInput("175.26");
 
     }
 }

@@ -6,5 +6,5 @@ public interface MainViewInterface {
     void startSectionThreeActivity();
     void startSectionFourActivity();
     void startSectionFiveActivity();
-
+    void startTimerActivity();
 }

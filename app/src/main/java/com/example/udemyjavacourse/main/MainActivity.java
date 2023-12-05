@@ -1,7 +1,6 @@
 package com.example.udemyjavacourse.main;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -11,11 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.udemyjavacourse.R;
 import com.example.udemyjavacourse.enums.Section;
+import com.example.udemyjavacourse.ideas.stopwatch.TimerActivity;
 import com.example.udemyjavacourse.udemy_section_five.UdemySectionFiveActivity;
 import com.example.udemyjavacourse.udemy_section_one.UdemySectionOneActivity;
 import com.example.udemyjavacourse.udemy_section_two.UdemySectionTwoActivity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends ComponentActivity implements MainViewClickListenerInterface, MainViewInterface {
@@ -72,6 +71,11 @@ public class MainActivity extends ComponentActivity implements MainViewClickList
     @Override
     public void startSectionFiveActivity() {
         startActivity(new Intent(this, UdemySectionFiveActivity.class));
+    }
+
+    @Override
+    public void startTimerActivity() {
+        startActivity(new Intent(this, TimerActivity.class));
     }
 
 }

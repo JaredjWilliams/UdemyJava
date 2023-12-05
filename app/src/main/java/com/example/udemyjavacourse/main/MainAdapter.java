@@ -31,8 +31,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainViewHolder> {
     @Override
     public MainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.section_layout, parent, false);
-        MainViewHolder holder = new MainViewHolder(view);
-        return holder;
+        return new MainViewHolder(view);
     }
 
     @Override

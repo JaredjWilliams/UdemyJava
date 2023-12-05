@@ -5,7 +5,8 @@ public enum Section {
     SECTION_TWO("Section 2", "Programming Tools Setup"),
     SECTION_THREE("Section 3", "First Steps"),
     SECTION_FOUR("Section 4", "IntelliJ Basics"),
-    SECTION_FIVE("Section 5", "Expressions, Statements, & More")
+    SECTION_FIVE("Section 5", "Expressions, Statements, & More"),
+    TIMER_ACTIVITY("Timer", "Lil timer thing")
     ;
 
         public final String name;

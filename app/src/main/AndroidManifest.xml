@@ -40,6 +40,10 @@
             android:screenOrientation="portrait"
             android:label=""/>
 
+        <activity android:name=".ideas.stopwatch.TimerActivity"
+            android:screenOrientation="portrait"
+            android:label=""/>
+
     </application>
 
 

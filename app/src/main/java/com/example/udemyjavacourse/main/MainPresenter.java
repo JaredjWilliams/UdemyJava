@@ -25,6 +25,7 @@ public class MainPresenter {
             case SECTION_THREE -> view.startSectionThreeActivity();
             case SECTION_FOUR -> view.startSectionFourActivity();
             case SECTION_FIVE -> view.startSectionFiveActivity();
+            case TIMER_ACTIVITY -> view.startTimerActivity();
         }
     }
 

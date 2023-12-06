@@ -17,11 +17,12 @@ import com.example.udemyjavacourse.ideas.stopwatch.models.Stopwatch;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TimerActivity extends AppCompatActivity {
+public class TimerActivity extends AppCompatActivity implements TimerViewInterface {
 
 
 
     private List<Stopwatch> stopwatchList = new ArrayList<Stopwatch>();
+    private TimerPresenter presenter = new TimerPresenter(this);
     private Button addTimerButton;
     private Button startAllButton;
     TimerAdapter adapter;
@@ -37,7 +38,7 @@ public class TimerActivity extends AppCompatActivity {
 
     private void setupRecyclerView() {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.stopwatch_recycler_view);
-        adapter = new TimerAdapter(stopwatchList, getApplication());
+        adapter = new TimerAdapter(stopwatchList, getApplication(), presenter);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -65,19 +66,36 @@ public class TimerActivity extends AppCompatActivity {
         startAllButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startAllTimers();
+                startStopAllTimers();
             }
         });
     }
 
     private void addTimer() {
-        stopwatchList.add(new Stopwatch("Jared Williams"));
+        stopwatchList.add(new Stopwatch());
         adapter.notifyItemInserted(stopwatchList.size() - 1);
     }
 
-    private void startAllTimers() {
-        for (Stopwatch stopwatch : stopwatchList) {
-            stopwatch.startTimer();
+    private void startStopAllTimers() {
+
+        if (presenter.areAllTimersStarted(stopwatchList)) {
+            for (Stopwatch stopwatch : stopwatchList) {
+                stopwatch.stopTimer();
+            }
+            setStopAllButtonText();
+        } else {
+            for (Stopwatch stopwatch : stopwatchList) {
+                stopwatch.startTimer();
+            }
+            setStartAllButtonText();
         }
+    }
+
+    private void setStartAllButtonText() {
+        startAllButton.setText("Start All Timers");
+    }
+
+    private void setStopAllButtonText() {
+        startAllButton.setText("Stop All Timers");
     }
 }

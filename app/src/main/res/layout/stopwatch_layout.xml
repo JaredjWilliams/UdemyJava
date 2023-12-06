@@ -20,12 +20,14 @@
             android:textSize="30sp"
             android:id="@+id/timer_number"/>
 
-        <TextView
+        <EditText
             android:id="@+id/athlete_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="10dp"
+            android:imeOptions="actionDone"
             android:textSize="30sp" />
+
 
     </LinearLayout>
 
@@ -35,7 +37,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -60,10 +62,14 @@
         </LinearLayout>
 
         <GridLayout
-            android:layout_width="match_parent"
+            android:id="@+id/laps_layout"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:rowCount="5"
-            android:columnCount="5"/>
+            android:rowCount="7"
+            android:columnCount="3">
+
+        </GridLayout>
 
     </LinearLayout>
 

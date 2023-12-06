@@ -19,19 +19,22 @@ public class Stopwatch {
     private ScheduledFuture<?> timerHandle;
     private List<Lap> laps = new ArrayList<Lap>();
     private int lapCounter = 0;
+    private boolean isStarted;
 
-    public Stopwatch(String name) {
-        this.name = name;
+    public Stopwatch() {
+        this.name = "Enter a name";
     }
 
     public void startTimer() {
         if (timerHandle == null || timerHandle.isCancelled()) {
+            isStarted = true;
             startTime = System.currentTimeMillis();
             timerHandle = scheduler.scheduleAtFixedRate(this::updateElapseTime, 0, 1000, TimeUnit.MILLISECONDS);
         }
     }
     public void stopTimer() {
         if (timerHandle != null && !timerHandle.isCancelled()) {
+            isStarted = false;
             timerHandle.cancel(true);
         }
     }
@@ -65,5 +68,21 @@ public class Stopwatch {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean isStarted() {
+        return isStarted;
+    }
+
+    public List<Lap> getLaps() {
+        return laps;
+    }
+
+    public Lap getLastLap() {
+        return laps.get(laps.size() - 1);
     }
 }

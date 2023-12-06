@@ -16,12 +16,14 @@ import java.util.List;
 
 public class TimerAdapter extends RecyclerView.Adapter<TimerViewHolder> {
 
+    private TimerPresenter presenter;
     List<Stopwatch> stopwatchList;
-
     Context context;
 
-    public TimerAdapter(List<Stopwatch> stopwatchList, Context context) {
+    public TimerAdapter(List<Stopwatch> stopwatchList, Context context, TimerPresenter presenter) {
         this.stopwatchList = stopwatchList;
+        this.presenter = presenter;
+        System.out.println("Presenter is null: " + (presenter == null ? "yes" : "no"));
         this.context = context;
     }
 
@@ -35,8 +37,12 @@ public class TimerAdapter extends RecyclerView.Adapter<TimerViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull TimerViewHolder holder, int position) {
+
         holder.stopwatch = stopwatchList.get(position);
+        holder.context = context;
         holder.setName();
+        holder.setLapsLayout();
+
     }
 
     @Override

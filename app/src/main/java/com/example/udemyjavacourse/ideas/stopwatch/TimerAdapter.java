@@ -11,11 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.udemyjavacourse.R;
 import com.example.udemyjavacourse.ideas.stopwatch.models.Stopwatch;
 
-import java.util.Collections;
 import java.util.List;
 
 public class TimerAdapter extends RecyclerView.Adapter<TimerViewHolder> {
-
     private TimerPresenter presenter;
     List<Stopwatch> stopwatchList;
     Context context;

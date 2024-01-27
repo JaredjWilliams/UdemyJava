@@ -16,10 +16,6 @@ public class Item {
 
     public double getBasePrice() {
         return switch (type) {
-            case  -> {
-                price += 1.00;
-                yield 1.00;
-            }
             case "Side" -> {
                 price += .50;
                 yield .50;
